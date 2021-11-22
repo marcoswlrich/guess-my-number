@@ -3,7 +3,7 @@
 // document.querySelector('.message').textContent = '🎉 Número correto'
 
 const secretNumber = Math.trunc(Math.random() * 20 + 1)
-document.querySelector('.number').textContent = secretNumber
+
 let score = 20
 
 document.querySelector('.check').addEventListener('click', function () {
@@ -17,6 +17,7 @@ document.querySelector('.check').addEventListener('click', function () {
     //Quando o jogador ganha
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent = '🎉 Número correto'
+    document.querySelector('.number').textContent = secretNumber
     //Manipulação de CSS
     document.querySelector('body').style.backgroundColor = '#60b347'
 
@@ -25,7 +26,7 @@ document.querySelector('.check').addEventListener('click', function () {
     //Quando o jogador perde
   } else if (guess > secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent = '📈 Muito alto'
+      document.querySelector('.message').textContent = '📈 Número alto'
       score--
       document.querySelector('.score').textContent = score
     } else {
@@ -36,7 +37,7 @@ document.querySelector('.check').addEventListener('click', function () {
     //Quando o jogador perde
   } else if (guess < secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent = '📉 Muito baixo'
+      document.querySelector('.message').textContent = '📉 Número baixo'
       score--
       document.querySelector('.score').textContent = score
     } else {
